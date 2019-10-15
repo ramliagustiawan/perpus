@@ -17,7 +17,7 @@
                   <th>No</th>
                   <th>Penulis</th>
                   {{-- <th>Edit</th> --}}
-                  
+
                 </tr>
 
                 </thead>
@@ -28,16 +28,16 @@
                     Explorer 4.0
                   </td>
                   <td>Win 95+</td>
-                 
+
                 </tr> --}}
-               
+
                 </tbody>
                 {{-- <tfoot>
                 <tr>
                   <th>No</th>
                   <th>Penulis</th>
                   <th>Edit</th>
-                 
+
                 </tr>
                 </tfoot> --}}
               </table>
@@ -50,7 +50,7 @@
 
 @push('scripts')
 <script>
-    $(function() 
+    $(function()
     {
         $('#dataTable').DataTable({
             processing: true,

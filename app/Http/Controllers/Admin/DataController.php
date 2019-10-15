@@ -8,7 +8,7 @@ use App\Author;
 
 class DataController extends Controller
 {
-    Public function authors()
+    public function authors()
     {
         return datatables()->of(Author::query())->toJson();
     }
