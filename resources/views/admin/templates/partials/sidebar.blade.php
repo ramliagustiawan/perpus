@@ -28,7 +28,7 @@
             <li class="header">MAIN NAVIGATION</li>
             
           
-            <li><a href="https://adminlte.io/docs"><i class="fa fa-user"></i> <span>Penulis</span></a></li>
+            <li><a href="{{ route('admin.author.index')}}"><i class="fa fa-user"></i> <span>Penulis</span></a></li>
 
             <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Buku</span></a></li>
 
