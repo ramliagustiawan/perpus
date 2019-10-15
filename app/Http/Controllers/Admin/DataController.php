@@ -10,6 +10,6 @@ class DataController extends Controller
 {
     Public function authors()
     {
-        return datatables()->of(User::query())->toJson();
+        return datatables()->of(Author::query())->toJson();
     }
 }
