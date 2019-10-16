@@ -11,6 +11,10 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+
+                {{-- flash message --}}
+               @include ('admin.templates.partials.alerts')
+
               <table id="dataTable" class="table table-bordered table-striped">
                 <thead>
                 <tr>

@@ -40,7 +40,8 @@ class AuthorController extends Controller
     {
         Author::create($request->only('name'));
 
-        return redirect()->route('admin.author.index');
+        return redirect()->route('admin.author.index')
+            ->with('success', 'Data Penulis Berhasil Ditambahkan');
     }
 
     /**
@@ -77,7 +78,8 @@ class AuthorController extends Controller
     public function update(Request $request, Author $author)
     {
         $author->update($request->only('name'));
-        return redirect()->route('admin.author.index');
+        return redirect()->route('admin.author.index')
+            ->with('info', 'Data Penulis Berhasil Dirubah');
     }
 
     /**
@@ -89,6 +91,7 @@ class AuthorController extends Controller
     public function destroy(Author $author)
     {
         $author->delete();
-        return redirect()->route('admin.author.index');
+        return redirect()->route('admin.author.index')
+            ->with('danger', 'Data Penulis Berhasil Dihapus');
     }
 }
