@@ -40,6 +40,11 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
+        // validasi
+        $this->validate($request, [
+            'name' => 'required|min:3'
+        ]);
+
         Author::create($request->only('name'));
 
         return redirect()->route('admin.author.index')
