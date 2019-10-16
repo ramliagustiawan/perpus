@@ -16,6 +16,7 @@
                 <tr>
                   <th>No</th>
                   <th>Penulis</th>
+                  <th>Aksi</th>
                   {{-- <th>Edit</th> --}}
                   
                 </tr>
@@ -58,7 +59,8 @@
             ajax:'{{ route('admin.author.data') }}',
             columns: [
                 {data:'DT_RowIndex', orderable:false,serachable:false},
-                {data:'name'}
+                {data:'name'},
+                {data: 'action'}
             ]
 
         });
