@@ -15,8 +15,8 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        return view ('admin.author.index',[
-            'title'=>'Data Penulis'
+        return view('admin.author.index', [
+            'title' => 'Data Penulis'
         ]);
     }
 
@@ -27,7 +27,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        return view ('admin.author.create');
+        return view('admin.author.create');
     }
 
     /**
@@ -39,9 +39,8 @@ class AuthorController extends Controller
     public function store(Request $request)
     {
         Author::create($request->only('name'));
-        
-        return redirect()->route('admin.author.index');
 
+        return redirect()->route('admin.author.index');
     }
 
     /**
@@ -63,9 +62,9 @@ class AuthorController extends Controller
      */
     public function edit(Author $author)
     {
-       return view ('admin.author.edit', [
-           'author'=>$author,
-       ]);
+        return view('admin.author.edit', [
+            'author' => $author,
+        ]);
     }
 
     /**
@@ -87,8 +86,9 @@ class AuthorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Author $author)
     {
-        //
+        $author->delete();
+        return redirect()->route('admin.author.index');
     }
 }
