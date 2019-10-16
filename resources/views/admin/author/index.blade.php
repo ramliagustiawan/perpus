@@ -57,7 +57,7 @@
             serverSide: true,
             ajax:'{{ route('admin.author.data') }}',
             columns: [
-                {data:'id'},
+                {data:'DT_RowIndex', orderable:false,serachable:false},
                 {data:'name'}
             ]
 
