@@ -15,7 +15,9 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        return view ('admin.author.index');
+        return view ('admin.author.index',[
+            'title'=>'Data Penulis'
+        ]);
     }
 
     /**
