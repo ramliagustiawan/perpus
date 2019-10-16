@@ -8,7 +8,7 @@ use App\Author;
 
 class DataController extends Controller
 {
-    Public function authors()
+    public function authors()
     {
         $authors = Author::orderBy ('name','ASC');
 
