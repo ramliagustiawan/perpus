@@ -12,8 +12,7 @@
             <!-- /.box-header -->
             <div class="box-body">
 
-                {{-- flash message --}}
-               @include ('admin.templates.partials.alerts')
+               
 
               <table id="dataTable" class="table table-bordered table-striped">
                 <thead>
@@ -60,6 +59,12 @@
 @endsection
 
 @push('scripts')
+
+        <script src="{{ asset('assets/plugins/bs-notify.min.js')}}"></script>
+
+         {{-- flash message --}}
+         @include ('admin.templates.partials.alerts')
+
 <script>
     $(function()
     {
