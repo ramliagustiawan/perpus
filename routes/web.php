@@ -12,8 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('frontend.templates.default');
+    return view('homepage');
 });
+
+Route::resource('service', 'ServiceController');
 
 
 // Route::get('/', function () {

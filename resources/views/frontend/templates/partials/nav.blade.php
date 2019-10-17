@@ -1,8 +1,9 @@
  <div class="navbar-fixed">
-        <nav class=" purple lighten-3">
+        <nav class=" purple lighten-3 ">
             <div class="container">
                 <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">SIP PATEN</a>
+                {{--  <img src="{{ asset('assets/images/favicon.ico') }}" alt="">  --}}
+                <a href="" class="brand-logo">SIP PATEN</a>
                  <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                 <li><a href="sass.html">Informasi Layanan</a></li>

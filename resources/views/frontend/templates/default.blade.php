@@ -11,16 +11,13 @@
 
 
 
-                {{-- slider --}}
-                @include('frontend.templates.partials.slider')
 
                 {{-- content --}}
                 <div class="container">
                     @yield('content')
                 </div>
 
-                {{-- our services --}}
-                @include('frontend.templates.partials.service')
+
 
 
 

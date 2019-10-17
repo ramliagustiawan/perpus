@@ -25,7 +25,7 @@
                  <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                 <li><a href="sass.html">Informasi Layanan</a></li>
-                <li><a href="badges.html">E-Layanan</a></li>
+                <li><a href="{{ route('service.index') }}">E-Layanan</a></li>
                  <li><a href="sass.html">Pelaporan</a></li>
                 <li><a href="{{ route('login') }}">Login</a></li>
                 <li><a href="{{ route('register') }}">Register</a></li>
@@ -63,7 +63,7 @@
             <div class="row">
                 <h3 class="ligt center grey-text-darken-3">Layanan</h3>
                 <div class="col m4 s12">
-                    <div class="card-panel center">
+                    <div class="card-panel center hoverable">
                         <i class="material-icons small">desktop_mac</i>
                         <h5>Informasi Layanan</h5>
                         <p>Informasi Status Layanan yang anda ajukan</p>
