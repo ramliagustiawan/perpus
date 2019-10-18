@@ -13,7 +13,9 @@
 
 Route::get('/', function () {
     return view('homepage');
-});
+})->name('homepage');
+
+Route::resource('infolayanan', 'InfolayananController');
 
 Route::resource('service', 'ServiceController');
 

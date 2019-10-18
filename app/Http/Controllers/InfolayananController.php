@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Infolayanan;
 use Illuminate\Http\Request;
 
-class ServiceController extends Controller
+class InfolayananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        return view('frontend.service.index', [
+        return view('frontend.infolayanan.index', [
             'title' => 'Data Penulis'
         ]);
     }
@@ -25,7 +26,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('frontend.service.create', [
+        return view('frontend.infolayanan.create', [
             'title' => 'Tambah Data Penulis'
         ]);
     }
@@ -44,10 +45,10 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Infolayanan  $infolayanan
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Infolayanan $infolayanan)
     {
         //
     }
@@ -55,10 +56,10 @@ class ServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Infolayanan  $infolayanan
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Infolayanan $infolayanan)
     {
         //
     }
@@ -67,10 +68,10 @@ class ServiceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Infolayanan  $infolayanan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Infolayanan $infolayanan)
     {
         //
     }
@@ -78,10 +79,10 @@ class ServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Infolayanan  $infolayanan
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Infolayanan $infolayanan)
     {
         //
     }
