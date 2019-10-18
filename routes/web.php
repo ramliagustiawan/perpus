@@ -19,6 +19,8 @@ Route::resource('infolayanan', 'InfolayananController');
 
 Route::resource('service', 'ServiceController');
 
+Route::resource('lapor', 'LaporController');
+
 
 // Route::get('/', function () {
 //     return view('admin.templates.default');

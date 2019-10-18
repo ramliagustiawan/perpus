@@ -32,27 +32,36 @@
                 <h3 class="ligt center grey-text-darken-3">Layanan</h3>
                 <div class="col m4 s12">
                     <div class="card-panel center hoverable">
-                        <i class="material-icons small">desktop_mac</i>
+                        <i class="material-icons small">record_voice_over</i>
                         <h5>Informasi Layanan</h5>
                         <p>Informasi Status Layanan yang anda ajukan</p>
+                        <div class="card-action center">
+                          <a href="{{ route('infolayanan.index') }}" class="vawes-effect waves-light btn red accent-1">Info</a>
+                        </div>
 
                     </div>
                 </div>
 
                  <div class="col m4 s12">
-                    <div class="card-panel center">
+                    <div class="card-panel center hoverable">
                         <i class="material-icons small">desktop_mac</i>
                         <h5>E-Layanan</h5>
                         <p>Silahkan ajukan layanan yang anda butuhkan</p>
+                        <div class="card-action center">
+                          <a href="{{ route('service.index') }}" class="vawes-effect waves-light btn red accent-1">Ajukan</a>
+                        </div>
 
                     </div>
                 </div>
 
                  <div class="col m4 s12">
-                    <div class="card-panel center">
-                        <i class="material-icons small">desktop_mac</i>
+                    <div class="card-panel center hoverable">
+                        <i class="material-icons small">phone_in_talk</i>
                         <h5>Pelaporan</h5>
                         <p>Silahkan sampaikan Pengaduan/keluhan Anda </p>
+                        <div class="card-action center">
+                          <a href="{{ route('lapor.index') }}" class="vawes-effect waves-light btn red accent-1">Laporkan</a>
+                        </div>
 
                     </div>
                 </div>

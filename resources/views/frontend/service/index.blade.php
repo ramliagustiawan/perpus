@@ -28,7 +28,7 @@
             </div>
 
             <div class="card-action center">
-              <a href="{{ route('service.create')}}">Ajukan</a>
+              <a href="{{ route('service.create')}}" class="vawes-effect waves-light btn red accent-1">Ajukan</a>
             </div>
 
           </div>
@@ -61,7 +61,7 @@
             </div>
 
             <div class="card-action center">
-              <a href="{{ route('service.create')}}">Ajukan</a>
+              <a href="{{ route('service.create')}}" class="vawes-effect waves-light btn red accent-1">Ajukan</a>
             </div>
 
           </div>

@@ -8,7 +8,7 @@
                 <ul class="right hide-on-med-and-down">
                 <li><a href="{{ route('infolayanan.index') }}">Informasi Layanan</a></li>
                 <li><a href="{{ route('service.index') }}">E-Layanan</a></li>
-                 <li><a href="#">Pelaporan</a></li>
+                 <li><a href="{{ route('lapor.index') }}">Pelaporan</a></li>
                 <li><a href="{{ route('login') }}">Login</a></li>
                 <li><a href="{{ route('register') }}">Register</a></li>
                 </ul>
