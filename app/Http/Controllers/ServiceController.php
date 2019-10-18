@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// use App\Http\Controllers\Controller;
+use App\Service;
+
 
 class ServiceController extends Controller
 {
@@ -13,8 +16,12 @@ class ServiceController extends Controller
      */
     public function index()
     {
+        $services = Service::get();
+
         return view('frontend.service.index', [
-            'title' => 'Data Penulis'
+            'title' => 'Data Penulis',
+            'service'=> $services,
+
         ]);
     }
 

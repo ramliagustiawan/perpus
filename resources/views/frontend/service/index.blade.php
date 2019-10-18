@@ -11,6 +11,9 @@
     <P class="flow-text">1. Pelayanan Perijinan</P>
 </blockquote>
 
+
+@foreach ($service as $serv)
+
     <div class="row">
 
         <div class="col s12 m3">
@@ -22,9 +25,9 @@
 
             </div>
             <div class="center">
-                <span class="card-title" style="font-weight: bold">IUMK</span>
+                <span class="card-title" style="font-weight: bold">{{ $serv->title}}</span>
                 <br>
-              <span>Ijin Usaha Mikro Kecil</span>
+              <span>{{ $serv->description}}</span>
             </div>
 
             <div class="card-action center">
@@ -33,7 +36,13 @@
 
           </div>
         </div>
+        @endforeach
+
     </div>
+
+    
+
+
 
     {{-- NONPERIJINAN --}}
 
@@ -44,7 +53,7 @@
 
     <div class="row">
 
-        @for ($i = 0; $i < 10; $i++)
+        @foreach ($service as $serv)
 
             <div class="col s12 m3">
           <div class="card hoverable">
@@ -55,9 +64,9 @@
 
             </div>
             <div class="center">
-                <span class="card-title" style="font-weight: bold">DISPENSASI NIKAH</span>
+                <span class="card-title" style="font-weight: bold">{{ $serv->title}}</span>
                 <br>
-              <span>Surat Keterangan Untuk Keperluan Nikah</span>
+              <span>{{ $serv->description}}</span>
             </div>
 
             <div class="card-action center">
@@ -67,7 +76,7 @@
           </div>
         </div>
 
-        @endfor
+        @endforeach
 
         <br>
 

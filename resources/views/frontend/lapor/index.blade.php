@@ -37,8 +37,8 @@
                         <label for="name">Nama</label>
                     </div>
                     <div class="input-field">
-                        <input type="email" name="email" id="email" class="validate">
-                        <label for="email">Email</label>
+                        <input type="text" name="alamat" id="alamat" required>
+                        <label for="email">Alamat</label>
                     </div>
                     <div class="input-field">
                         <input type="text" name="phone" id="phone">
