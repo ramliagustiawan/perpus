@@ -3,56 +3,31 @@
 @section('content')
 
 <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Data Buku</h3>
-            <a href="{{ route('admin.book.create')}}" class="btn btn-primary ml-2">Tambah Buku</a>
+    <div class="box-header">
+        <h3 class="box-title">Data Buku</h3>
+        <a href="{{ route('admin.book.create')}}" class="btn btn-primary ml-2">Tambah Buku</a>
 
-
-            </div>
-            <!-- /.box-header -->
+        </div>
+        <!-- /.box-header -->
             <div class="box-body">
 
-
-
-              <table id="dataTable" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                  <th>No</th>
-                  <th>Judul</th>
-                  <th>Deskripsi</th>
-                  <th>Penulis</th>
-                  <th>Cover</th>
-                  <th>Aksi</th>
-
-                  {{-- <th>Edit</th> --}}
-
-                </tr>
-
-                </thead>
-                <tbody>
-                {{-- <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-
-                </tr> --}}
-
-                </tbody>
-                {{-- <tfoot>
-                <tr>
-                  <th>No</th>
-                  <th>Penulis</th>
-                  <th>Edit</th>
-
-                </tr>
-                </tfoot> --}}
-              </table>
+                <table id="dataTable" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Judul</th>
+                            <th>Deskripsi</th>
+                            <th>Penulis</th>
+                            <th>Cover</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
+    </div>
+    <!-- /.box-body -->
+</div>
+<!-- /.box -->
 
           <form action="" method="post" id="deleteForm">
               @csrf
@@ -62,7 +37,19 @@
 
 @endsection
 
+{{-- css untuk datatables --}}
+@push('datatable')
+    <!-- DataTables -->
+  <link rel="stylesheet" href="{{ asset('assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+@endpush
+
+
+{{-- js untuk bs notify --}}
 @push('scripts')
+
+<!-- DataTables -->
+<script src="{{ asset('assets/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
 
         <script src="{{ asset('assets/plugins/bs-notify.min.js')}}"></script>
 
