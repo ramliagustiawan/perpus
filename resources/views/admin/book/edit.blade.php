@@ -7,22 +7,77 @@
         </div>
 
         <div class="box-body">
-        <form action="{{ route('admin.book.update',$book)}}" method="POST">
+        <form action="{{ route('admin.book.update', $book)}}" method="POST" enctype="multipart/form-data" >
                 @csrf
                 @method("PUT")
 
-                <div class="form-group @error('name') has-error @enderror">
-                    <label for="">Nama</label>
-                <input type="text" name="name" class="form-control" placeholder="Masukkan Nama Penulis" value="{{ old('name') ?? $author->name}}">
+                <div class="form-group @error('title') has-error @enderror">
 
-                @error('name')
-                <span class="help-block">{{ $message }}</span>
-                 @enderror
+                    <label for="">Judul</label>
+                    <input type="text" name="title" class="form-control" placeholder="Masukkan Judul Buku" value="{{ $book->title ?? old('title') }}">
+
+                    @error('title')
+                        <span class="help-block">{{ $message }}</span>
+                    @enderror
+
+                </div>
+
+                <div class="form-group @error('description') has-error @enderror">
+
+                    <label for="">Deskripsi</label>
+                    <textarea name="description" id="" rows="3" class="form-control" placeholder="Tuliskan Deskripsi Buku">{{ $book->description ?? old('description') }}</textarea>
+                    @error('description')
+                        <span class="help-block">{{ $message }}</span>
+                    @enderror
+
+                </div>
+
+                <div class="form-group @error('author_id') has-error @enderror">
+
+                        <label for="">Penulis</label>
+                        <select name="author_id" id="" class="form-control select2">
+                            @foreach ($authors as $author)
+                            <option
+                            value="{{ $author->id }}"
+                                @if($author->id === $book->author_id)
+                                    selected
+                                @endif
+                            >
+                            {{ $author->name }}
+                        </option>
+                            @endforeach
+                        </select>
+
+                        @error('author_id')
+                            <span class="help-block">{{ $message }}</span>
+                        @enderror
+
+                </div>
+
+                <div class="form-group @error('cover') has-error @enderror">
+
+                    <label for="">Sampul</label>
+                    <input type="file" name="cover" class="form-control">
+
+                    @error('cover')
+                        <span class="help-block">{{ $message }}</span>
+                    @enderror
+
+                </div>
+
+                <div class="form-group @error('qty') has-error @enderror">
+
+                        <label for="">Jumlah</label>
+                        <input type="text" name="qty" class="form-control" placeholder="Masukkan Jumlah Buku" value="{{ $book->qty ?? old('qty') }}">
+
+                        @error('qty')
+                            <span class="help-block">{{ $message }}</span>
+                        @enderror
 
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" value="Ubah" class="btn btn-primary">
+                    <input type="submit" value="Simpan" class="btn btn-primary">
                 </div>
 
             </form>

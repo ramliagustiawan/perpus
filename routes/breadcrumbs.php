@@ -39,10 +39,10 @@ Breadcrumbs::for('admin.book.create', function ($trail) {
 });
 
 //Book edit
-Breadcrumbs::for('admin.book.edit', function ($trail) {
+Breadcrumbs::for('admin.book.edit', function ($trail, $book) {
     $trail->push('Beranda', route('admin.dashboard'));
     $trail->push('Daftar Buku', route('admin.book.index'));
-    $trail->push('Edit Data Buku', route('admin.book.edit'));
+    $trail->push('Edit Data Buku', route('admin.book.edit', $book));
 });
 
 

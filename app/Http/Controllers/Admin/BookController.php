@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Book;
 use App\Author;
+use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
 {
@@ -90,9 +91,13 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Book $book)
     {
-        //
+        return view('admin.book.edit', [
+            'title' => 'Ubah Data Buku',
+            'book' => $book,
+            'authors' => Author::orderBy('name', 'ASC')->get(),
+        ]);
     }
 
     /**
@@ -102,9 +107,38 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Book $book)
     {
-        //
+        // validasi
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required|min:20',
+            'author_id' => 'required',
+            'cover' => 'file|image',
+            'qty' => 'required|numeric'
+
+        ]);
+
+        //cek gambar
+
+        $cover = $book->cover;
+
+        if ($request->hasFile('cover')) {
+            Storage::delete($book->cover);
+            $cover = $request->file('cover')->store('assets/covers');
+        }
+
+        //tambah ke database cat:jgn lupa tambahkan use book diatas
+        $book->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'author_id' => $request->author_id,
+            'cover' => $cover,
+            'qty' => $request->qty
+
+        ]);
+
+        return redirect()->route('admin.book.index')->withSuccess('Data Buku Berhasil Di Perbaharui');
     }
 
     /**
@@ -113,8 +147,10 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Book $book)
     {
-        //
+        $book->delete();
+        return redirect()->route('admin.book.index')
+            ->with('danger', 'Data Buku Berhasil Dihapus');
     }
 }
