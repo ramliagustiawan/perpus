@@ -14,7 +14,7 @@
 
 
 
-              <table id="dataTable" class="table table-bordered table-striped">
+              <table id="dataTable" class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>No</th>
@@ -77,7 +77,7 @@
             serverSide: true,
             ajax:'{{ route('admin.book.data') }}',
             columns: [
-                {data:'DT_RowIndex', orderable:false,serachable:false},
+                {data:'DT_RowIndex', orderable:false,searchable:false},
                 {data:'title'},
                 {data: 'description'},
                 {data: 'author'},
