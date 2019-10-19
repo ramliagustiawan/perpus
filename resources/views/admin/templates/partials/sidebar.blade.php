@@ -8,7 +8,7 @@
             </div>
             <div class="pull-left info">
               <p> {{ auth()->user()->name }}</p>
-              
+
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
           </div>
@@ -26,15 +26,17 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            
-          
+
+
             <li><a href="{{ route('admin.author.index')}}"><i class="fa fa-user"></i> <span>Penulis</span></a></li>
 
-            <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Buku</span></a></li>
+            <li><a href="{{ route('admin.book.index')}}"><i class="fa fa-book"></i> <span>Buku</span></a></li>
 
             <li><a href="https://adminlte.io/docs"><i class="fa fa-users"></i> <span>Users</span></a></li>
 
-           
+            <li><a href="{{ route('admin.ijin.index')}}"><i class="fa fa-users"></i> <span>Data Pelayanan Perijinan</span></a></li>
+
+
           </ul>
         </section>
         <!-- /.sidebar -->

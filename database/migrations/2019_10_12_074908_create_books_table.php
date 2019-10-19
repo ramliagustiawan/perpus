@@ -18,11 +18,10 @@ class CreateBooksTable extends Migration
             $table->unsignedBigInteger('author_id');
             $table->string('title');
             $table->text('description');
-            $table->string('cover');
+            $table->string('cover')->nullable()->default(null);
             $table->timestamps();
-// BUAT FOREIGN KEY
+            // BUAT FOREIGN KEY
             $table->foreign('author_id')->references('id')->on('authors')->onUpdate('CASCADE')->onDelete('CASCADE');
-
         });
     }
 

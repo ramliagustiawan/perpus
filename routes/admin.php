@@ -6,6 +6,10 @@ Route::get('/', 'HomeController@index')->name('dashboard');
 
 Route::get('/author/data', 'DataController@authors')->name('author.data');
 
+Route::get('/book/data', 'DataController@books')->name('book.data');
+
+Route::get('/ijin/data', 'DataController@ijins')->name('ijin.data');
+
 // Route::get('/author', 'AuthorController@index')->name('author.index');
 // Route::get('/author/create', 'AuthorController@create')->name('author.create');
 // Route::post('/author', 'AuthorController@store')->name('author.store');
@@ -15,3 +19,7 @@ Route::get('/author/data', 'DataController@authors')->name('author.data');
 
 // route Author diatas bisa lebih disederhanakan
 Route::resource('author', 'AuthorController');
+
+Route::resource('book', 'BookController');
+
+Route::resource('ijin', 'IjinController');
