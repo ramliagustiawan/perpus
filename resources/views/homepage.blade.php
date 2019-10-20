@@ -75,11 +75,6 @@
 
 
 
-
-
-
-   
-
          <!--JavaScript at end of body for optimized loading-->
          @include('frontend.templates.partials.script')
 

@@ -10,7 +10,7 @@
 
 
                 {{-- nav --}}
-                @include('frontend.templates.partials.nav')
+                @include('frontend.templates.partials.navperpus')
 
 
                 <main>

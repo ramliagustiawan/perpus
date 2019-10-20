@@ -6,6 +6,12 @@
         M.Sidenav.init(sidenav);
     </script>
 
+     {{-- dropdown script --}}
+     <script>
+            const dropdown = document.querySelectorAll('.dropdown-trigger');
+            M.Dropdown.init(dropdown);
+    </script>
+
     {{-- slider script --}}
 
     <script>

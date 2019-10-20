@@ -1,23 +1,47 @@
-@extends('layouts.app')
+
+
+@extends('frontend.templates.default')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    <div class="row">
+        <h4>Buku Yang Sedang Dipinjam</h4>
 
-                    You are logged in!
+        @foreach($books as $book)
+
+        <div class="card horizontal hoverable">
+                <div class="card-image">
+                        <img src="{{ $book->getCover() }}" >
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+            
+                        <h4 class="red-text accent-2">{{ $book->title}}</h4>
+                        <blockquote>
+                            <p>{{ $book->description }}</p>
+                        </blockquote>
+                        <p>
+                            <div class="i material-icons">person</div>{{ $book->author->name }}
+                        </p>
+                        <p>
+                            {{-- <div class="i material-icons">book</div>{{ $book->qty }} --}}
+                        </p>
+            
+                    </div>
+                   
                 </div>
             </div>
-        </div>
+
+        @endforeach
+
+       
     </div>
-</div>
+
 @endsection
+
+
+
+
+
+
+

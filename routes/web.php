@@ -11,13 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-})->name('homepage');
+
+// Route::get('/', function () {
+//     return view('homepage');
+// })->name('homepage');
 
 
 
-Route::get('/buku', 'BukuController@index')->name('buku.index');
+Route::get('/', 'BukuController@index')->name('buku.index');
 Route::get('/buku/{buku}', 'BukuController@show')->name('buku.show');
 Route::post('/buku/{buku}/borrow', 'BukuController@borrow')->name('buku.borrow')->middleware('auth');
 
