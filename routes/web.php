@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('homepage');
 })->name('homepage');
 
+Route::resource('buku', 'BukuController');
+
 Route::resource('infolayanan', 'InfolayananController');
 
 Route::resource('service', 'ServiceController');

@@ -6,6 +6,7 @@
                 <a href="{{ route('homepage') }}" class="brand-logo">SIP PATEN</a>
                  <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
+                <li><a href="{{ route('buku.index') }}">Daftar Buku</a></li>
                 <li><a href="{{ route('infolayanan.index') }}">Informasi Layanan</a></li>
                 <li><a href="{{ route('service.index') }}">E-Layanan</a></li>
                  <li><a href="{{ route('lapor.index') }}">Pelaporan</a></li>
