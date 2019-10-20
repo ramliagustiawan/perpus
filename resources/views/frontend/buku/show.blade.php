@@ -28,7 +28,12 @@
 
         </div>
         <div class="card-action">
-        <a href="#" class="btn red accent-1 right waves-effect waves-light">Pinjam Buku</a>
+
+                <form action="{{ route('buku.borrow',$book) }}" method="POST">
+                    @csrf
+                    <input type="submit" value="Pinjam Buku" class="btn red accent-1 right waves-effect waves-light">
+                </form>
+
         </div>
     </div>
 </div>
@@ -55,7 +60,10 @@
                         <p>{{ Str::limit($book->description,50) }}</p>
                     </div>
                     <div class="card-action">
-                        <a href="#" class="btn red accent-1 right waves-effect waves-light">Pinjam Buku</a>
+                        <form action="{{ route('buku.borrow',$book) }}" method="POST">
+                            @csrf
+                            <input type="submit" value="Pinjam Buku" class="btn red accent-1 right waves-effect waves-light">
+                        </form>
                     </div>
                 </div>
             </div>
