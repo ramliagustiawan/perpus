@@ -40,5 +40,6 @@ Route::resource('lapor', 'LaporController');
 // });
 
 Auth::routes(['verify' => true]);
-
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/', 'BukuController@index')->name('buku.index')->middleware('verified');
+Route::get('/buku/{buku}', 'BukuController@show')->name('buku.show')->middleware('verified');

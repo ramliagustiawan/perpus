@@ -1,28 +1,39 @@
-@extends('layouts.app')
+@extends('frontend.templates.default')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+{{--  <div class="container">  --}}
 
-                <div class="card-body">
-                    @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
-                        </div>
-                    @endif
+        <h1 class="flow-text">Wellcome {{ auth()->user()->name }}</h1>
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
+        <blockquote>
+        <p>Selamat Datang di Aplikasi Perpustakaan Online v.1.0</p>
+        </blockquote>
+
+
+    <div class="col s12 m6">
+
+        <div class="card horizontal hoverable">
+                       
+            <div class="card-stacked">
+                <div class="card-content">
+                    <a href="#">
+                    <h4>Verifikasi Email</h4>
+                    </a>
+        
+                    <h6>{{ __('Langkah Selanjutnya Silahkan cek Kotak Masuk Email Anda ') }}</h6>
+                    <h6>{{ __('Klik Untuk Verifikasi') }}</h6>
+                </div>
+                <div class="card-action">
+    
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                        <button type="submit" class="btn red accent-1 right waves-effect waves-light">{{ __('Kirim Konfirmasi Lagi') }}</button>.
                     </form>
                 </div>
             </div>
         </div>
+    
     </div>
-</div>
+   
+{{--  </div>  --}}
 @endsection
