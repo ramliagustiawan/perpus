@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Book;
 
 
+
+
 class BukuController extends Controller
 {
     /**
@@ -50,9 +52,14 @@ class BukuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Book $buku)
     {
-        //
+        return view('frontend.buku.show', [
+
+            'title' => 'Detail Buku',
+            'book' => $buku,
+
+        ]);
     }
 
     /**

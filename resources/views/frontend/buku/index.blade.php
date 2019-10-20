@@ -10,6 +10,7 @@
     <blockquote>
     <p>Koleksi Buku yang Bisa Anda Baca & Pinjam</p>
     </blockquote>
+
     <div class="row">
         @foreach ($books as $book)
 
@@ -21,11 +22,14 @@
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
-                            <h6>{{ Str::limit($book->title,30) }}</h6>
+                            <a href="{{ route('buku.show',$book) }}">
+                                <h6>{{ Str::limit($book->title,30) }}</h6>
+                            </a>
+
                             <p>{{ Str::limit($book->description,50) }}</p>
                         </div>
                         <div class="card-action">
-                        <a href="#">Pinjam Buku</a>
+                            <a href="#" class="btn red accent-1 right waves-effect waves-light">Pinjam Buku</a>
                         </div>
                     </div>
                 </div>
