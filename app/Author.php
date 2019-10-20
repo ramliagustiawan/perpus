@@ -12,6 +12,7 @@ class Author extends Model
 
     public function books()
     {
+        // relasi author ke banyak buku
         return $this->hasMany(Book::class);
     }
 }
