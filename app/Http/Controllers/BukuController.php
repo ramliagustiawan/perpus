@@ -14,7 +14,7 @@ class BukuController extends Controller
         $books = Book::paginate(10);
 
         return view('frontend.buku.index', [
-            'title' => 'Data Buku',
+            'title' => 'Beranda Perpustakaan',
             'books' => $books
         ]);
     }
@@ -25,7 +25,7 @@ class BukuController extends Controller
     {
         return view('frontend.buku.show', [
 
-            'title' => 'Detail Buku',
+            'title' => $buku->title,
             'book' => $buku,
 
         ]);
