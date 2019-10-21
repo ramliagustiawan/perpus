@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Author;
 use App\Service;
 use App\Book;
+use App\BorrowHistory;
 
 class DataController extends Controller
 {
@@ -48,4 +49,22 @@ class DataController extends Controller
             ->rawColumns(['cover'])
             ->toJson();
     }
+
+    public function borrows()
+    {
+        $borrows = BorrowHistory::isBorrowed()->latest();
+
+        return datatables()->of($borrows)
+            ->addColumn('user', function (BorrowHistory $model) {
+                return $model->user->name;
+            })
+            ->editColumn('book_title', function (BorrowHistory $model) {
+                return $model->book->title;
+            })
+            ->addColumn('action', 'admin.borrow.action')
+            ->addIndexColumn()
+            ->rawColumns(['action'])
+            ->toJson();
+    }
+
 }

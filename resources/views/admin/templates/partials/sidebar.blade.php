@@ -32,9 +32,11 @@
 
             <li><a href="{{ route('admin.book.index')}}"><i class="fa fa-book"></i> <span>Buku</span></a></li>
 
+            <li><a href="{{ route('admin.borrow.index')}}"><i class="fa fa-book"></i> <span>Buku Sedang Dipinjam</span></a></li>
+
             <li><a href="https://adminlte.io/docs"><i class="fa fa-users"></i> <span>Users</span></a></li>
 
-            <li><a href="{{ route('admin.ijin.index')}}"><i class="fa fa-users"></i> <span>Data Pelayanan Perijinan</span></a></li>
+            {{-- <li><a href="{{ route('admin.ijin.index')}}"><i class="fa fa-users"></i> <span>Data Pelayanan Perijinan</span></a></li> --}}
 
 
           </ul>

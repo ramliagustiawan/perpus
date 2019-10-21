@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
  {{-- <div class="container"> --}}
     <h1 class="flow-text">KOLEKSI BUKU</h1>
 
@@ -14,18 +12,20 @@
     <div class="row">
         @foreach ($books as $book)
 
-             {{-- bisa juga pakai include --}}
-        @component('frontend.templates.components.card-book',
-            [
-                'book'=>$book
-            ])
-        @endcomponent
+            {{-- bisa juga pakai include --}}
+            @component('frontend.templates.components.card-book',
+                [
+                    'book'=>$book
+                ])
+            @endcomponent
 
         @endforeach
 
     </div>
 
+    
     {{-- pagination --}}
     {{ $books->links('vendor.pagination.materialize') }}
+   
 
 @endsection
